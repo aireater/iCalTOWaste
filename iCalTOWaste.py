@@ -3,16 +3,6 @@
 import csv, time, os, errno
 from datetime import datetime, timedelta
 
-#title           :iCalTOWaste.py
-#description     :Create ical and gmail calendar files for city of toronto curbside garbage collection
-#author          :eric partington
-#date            :2016/07/27
-#version         :0.1
-#usage           :python iCalTOWaste.py
-#notes           :
-#python_version  :
-#==============================================================================
-
 #global variables
 CALENDAR_OUTPUT_DIR = 'FinalCalendars/'
 CSV_OUTPUT_DIR = 'CSVCalendars/'
@@ -114,26 +104,28 @@ def WriteCal():
             print "#skipping header"
             #skip first line as that is header
             data.next()
-        else:
-            day = datetime.strptime(Day, INPUT_DATE_FORMAT)
+            continue
 
-            #mark the calendar appointment as allDay
-            #may try to change this to 7am as that is when the city wants curbside garbage out by.
-            allDay = ["True"]
-            startDate = [datetime.strftime(day, CSV_DATE_FORMAT)]
-            if ChristmasTree != "0":
-                subject = ["Christmas Tree/Garbage Day"]
-                description = ["Garbage and Green Bin waste, Christmas tree collection occurs Today. When placing your tree out for collection, please remove all decorations, tinsel, etc and do not place out in any type of bag"]
-            elif Recycling != "0":
-                subject = ["Recycling Day"]
-                description = ["Recycling and Green Bin - More information on what can be recycled click here: http://www.toronto.ca/garbage/bluebin.htm"]
-            elif Garbage != "0" and ChristmasTree == "0":
-                subject = ["Garbage Day"]
-                description = ["Garbage, Yard and Green Bin - Basic sorting information here: http://app.toronto.ca/wes/winfo/search.do"]
+        day = datetime.strptime(Day, INPUT_DATE_FORMAT)
 
-            new_line = subject + startDate + allDay + description
-            #append the contents to the file template created above
-            csv.writer(open((CSV_OUT_PATH+Calendar +'.csv'), 'a')).writerow(new_line)
+        #mark the calendar appointment as allDay
+        #may try to change this to 7am as that is when the city wants curbside garbage out by.
+        allDay = ["True"]
+        startDate = [datetime.strftime(day, CSV_DATE_FORMAT)]
+        if ChristmasTree != "0":
+            subject = ["Christmas Tree/Garbage Day"]
+            description = ["Garbage and Green Bin waste, Christmas tree collection occurs Today. When placing your tree out for collection, please remove all decorations, tinsel, etc and do not place out in any type of bag"]
+        elif Recycling != "0":
+            subject = ["Recycling Day"]
+            description = ["Recycling and Green Bin - More information on what can be recycled click here: http://www.toronto.ca/garbage/bluebin.htm"]
+        elif Garbage != "0" and ChristmasTree == "0":
+            subject = ["Garbage Day"]
+            description = ["Garbage, Yard and Green Bin - Basic sorting information here: http://app.toronto.ca/wes/winfo/search.do"]
+
+        new_line = subject + startDate + allDay + description
+        #append the contents to the file template created above
+        csv.writer(open((CSV_OUT_PATH+Calendar +'.csv'), 'a')).writerow(new_line)
+
     print "# Finished writing CSV calendars ##"
     input_file.close()
 
@@ -151,36 +143,37 @@ def WriteIcs():
             print "#skipping header"
             #skip first line as that is header
             data2.next()
-        else:
-            day = datetime.strptime(WeekStarting, INPUT_DATE_FORMAT)
-            #mark the calendar appointment as allDay
-            #may try to change this to 7am as that is when the city wants curbside garbage out by.
-            #allDay = ["True"]
-            startDate = datetime.strftime(day, ICS_DATE_FORMAT)
-            if ChristmasTree != "0":
-                subject = "Christmas Tree/Garbage Day"
-                description = "Garbage and Green Bin waste, Christmas tree collection occurs Today. When placing your tree out for collection, please remove all decorations, tinsel, etc and do not place out in any type of bag"
-                url=""
-            elif Recycling != "0":
-                subject = "Recycling Day"
-                description = "Recycling and Green Bin"
-                url="http://www.toronto.ca/garbage/bluebin.htm"
-            elif Garbage != "0" and ChristmasTree == "0":
-                subject = "Garbage Day"
-                description = "Garbage, Yard and Green Bin"
-                url = "http://app.toronto.ca/wes/winfo/search.do"
+            continue
 
-            #append the contents to the file template created above
-            with open(ICS_OUT_PATH+Calendar +'.ics', 'a') as f:
-            #csv.writer(open((ICS_OUT_PATH+Calendar +'.ics'), 'w')).writerow(calendar_line)
-                f.write('BEGIN:VEVENT\n')
-                f.write('URL;VALUE=URI:'+url+'\n')
-                f.write('DTEND;VALUE=DATE:'+startDate+'\n')
-                f.write('SUMMARY:'+subject+'\n')
-                f.write('LOCATION:'+Calendar+' Waste Pickup\n')
-                f.write('DTSTART;VALUE=DATE:'+startDate+'\n')
-                f.write('DESCRIPTION:'+description+'\n')
-                f.write('END:VEVENT\n')
+        day = datetime.strptime(WeekStarting, INPUT_DATE_FORMAT)
+        #mark the calendar appointment as allDay
+        #may try to change this to 7am as that is when the city wants curbside garbage out by.
+        #allDay = ["True"]
+        startDate = datetime.strftime(day, ICS_DATE_FORMAT)
+        if ChristmasTree != "0":
+            subject = "Christmas Tree/Garbage Day"
+            description = "Garbage and Green Bin waste, Christmas tree collection occurs Today. When placing your tree out for collection, please remove all decorations, tinsel, etc and do not place out in any type of bag"
+            url=""
+        elif Recycling != "0":
+            subject = "Recycling Day"
+            description = "Recycling and Green Bin"
+            url="http://www.toronto.ca/garbage/bluebin.htm"
+        elif Garbage != "0" and ChristmasTree == "0":
+            subject = "Garbage Day"
+            description = "Garbage, Yard and Green Bin"
+            url = "http://app.toronto.ca/wes/winfo/search.do"
+
+        #append the contents to the file template created above
+        with open(ICS_OUT_PATH+Calendar +'.ics', 'a') as f:
+        #csv.writer(open((ICS_OUT_PATH+Calendar +'.ics'), 'w')).writerow(calendar_line)
+            f.write('BEGIN:VEVENT\n')
+            f.write('URL;VALUE=URI:'+url+'\n')
+            f.write('DTEND;VALUE=DATE:'+startDate+'\n')
+            f.write('SUMMARY:'+subject+'\n')
+            f.write('LOCATION:'+Calendar+' Waste Pickup\n')
+            f.write('DTSTART;VALUE=DATE:'+startDate+'\n')
+            f.write('DESCRIPTION:'+description+'\n')
+            f.write('END:VEVENT\n')
 
             #print 'end '+Calendar
 
