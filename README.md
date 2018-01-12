@@ -4,28 +4,28 @@ Converts Toronto Open Data Solid Waste data into useable iCal and CSV calendars.
 
 ![Example](AllCals.jpg)
 
-| Zone | Google Calendar/iCal | Outlook/Yahoo! Calendars/CSV |
-|------|:--------------------:|:----------------------------:|
+| Zone         |                                               Google Calendar/iCal                                                |                                           Outlook/Yahoo! Calendars/CSV                                           |
+| ------------ | :---------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
 | Monday Night | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/MondayNight.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/MondayNight.csv) |
-| Tuesday 1 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Tuesday1.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Tuesday1.csv) |
-| Tuesday 2 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Tuesday2.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Tuesday2.csv) |
-| Wednesday 1 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Wednesday1.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Wednesday1.csv) |
-| Wednesday 2 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Wednesday2.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Wednesday2.csv) |
-| Thursday 1 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Thursday1.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Thursday1.csv) |
-| Thursday 2 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Thursday2.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Thursday2.csv) |
-| Friday 1 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Friday1.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Friday1.csv) |
-| Friday 2 | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Friday2.ics) | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Friday2.csv) |
+| Tuesday 1    |  [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Tuesday1.ics)   |  [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Tuesday1.csv)   |
+| Tuesday 2    |  [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Tuesday2.ics)   |  [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Tuesday2.csv)   |
+| Wednesday 1  | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Wednesday1.ics)  | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Wednesday1.csv)  |
+| Wednesday 2  | [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Wednesday2.ics)  | [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Wednesday2.csv)  |
+| Thursday 1   |  [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Thursday1.ics)  |  [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Thursday1.csv)  |
+| Thursday 2   |  [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Thursday2.ics)  |  [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Thursday2.csv)  |
+| Friday 1     |   [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Friday1.ics)   |   [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Friday1.csv)   |
+| Friday 2     |   [iCal](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/ICSCalendars/Friday2.ics)   |   [CSV](https://raw.githubusercontent.com/mtpettyp/iCalTOWaste/master/FinalCalendars/CSVCalendars/Friday2.csv)   |
 
-Find out when your waste gets collected [here](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=3f3cbf3b6e156510VgnVCM10000071d60f89RCRD)
-
+Find out when your waste gets collected [here](https://www.toronto.ca/services-payments/recycling-organics-garbage/houses/collection-schedule/curbside-collection-maps/)
 
 ## Updating
+
 1. Grab the latest CSV file from [here](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=2ee34b5073cfa310VgnVCM10000071d60f89RCRD&vgnextchannel=bcb6e03bb8d1e310VgnVCM10000071d60f89RCRD)
 1. Save the file as Calendars.csv
 1. Run `python iCalTOWaste.py`
 
-
 ## Contributing
+
 1. Fork it
 1. Create your feature branch: git checkout -b my-new-feature
 1. Commit your changes: git commit -am 'Add some feature'
