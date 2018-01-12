@@ -60,10 +60,10 @@ def MakeFiles():
 
     # create the template header for the new calendar csv files
     subject = ["Subject"]
-    startDate = ["Start Date"]
-    allDay = ["All Day Event"]
+    start_date = ["Start Date"]
+    all_day = ["All Day Event"]
     description = ["Description"]
-    new_line = subject + startDate + allDay + description
+    new_line = subject + start_date + all_day + description
 
     # grab only the unique pickup days from the first column
     for line in data:
@@ -117,10 +117,10 @@ def WriteCal():
 
         day = datetime.strptime(Day, INPUT_DATE_FORMAT)
 
-        # mark the calendar appointment as allDay
+        # mark the calendar appointment as all_day
         # may try to change this to 7am as that is when the city wants curbside garbage out by.
-        allDay = ["True"]
-        startDate = [datetime.strftime(day, CSV_DATE_FORMAT)]
+        all_day = ["True"]
+        start_date = [datetime.strftime(day, CSV_DATE_FORMAT)]
         if ChristmasTree != "0":
             subject = ["Christmas Tree/Garbage Day"]
             description = ["Garbage and Green Bin waste, Christmas tree collection occurs Today. When placing your tree out for collection, please remove all decorations, tinsel, etc and do not place out in any type of bag"]
@@ -133,7 +133,7 @@ def WriteCal():
             description = [
                 "Garbage, Yard and Green Bin - Basic sorting information here: http://app.toronto.ca/wes/winfo/search.do"]
 
-        new_line = subject + startDate + allDay + description
+        new_line = subject + start_date + all_day + description
         # append the contents to the file template created above
         csv.writer(open((CSV_OUT_PATH + Calendar + '.csv'), 'a')
                    ).writerow(new_line)
@@ -161,10 +161,10 @@ def WriteIcs():
             continue
 
         day = datetime.strptime(WeekStarting, INPUT_DATE_FORMAT)
-        # mark the calendar appointment as allDay
+        # mark the calendar appointment as all_day
         # may try to change this to 7am as that is when the city wants curbside garbage out by.
-        #allDay = ["True"]
-        startDate = datetime.strftime(day, ICS_DATE_FORMAT)
+        #all_day = ["True"]
+        start_date = datetime.strftime(day, ICS_DATE_FORMAT)
         if ChristmasTree != "0":
             subject = "Christmas Tree/Garbage Day"
             description = (
@@ -190,10 +190,10 @@ def WriteIcs():
             #csv.writer(open((ICS_OUT_PATH+Calendar +'.ics'), 'w')).writerow(calendar_line)
             f.write('BEGIN:VEVENT\n')
             f.write('URL;VALUE=URI:' + url + '\n')
-            f.write('DTEND;VALUE=DATE:' + startDate + '\n')
+            f.write('DTEND;VALUE=DATE:' + start_date + '\n')
             f.write('SUMMARY:' + subject + '\n')
             f.write('LOCATION:' + Calendar + ' Waste Pickup\n')
-            f.write('DTSTART;VALUE=DATE:' + startDate + '\n')
+            f.write('DTSTART;VALUE=DATE:' + start_date + '\n')
             f.write('DESCRIPTION:' + description + '\n')
             f.write('END:VEVENT\n')
 
